@@ -1,6 +1,6 @@
 var canvas;
 var brush;
-
+var yourMom;
 //Input variables
 var upKey;
 var downKey;
