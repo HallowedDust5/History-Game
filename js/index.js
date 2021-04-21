@@ -25,7 +25,7 @@ window.onload=function(){
 
     player= new Player(200,200,50,50);
     testBox = new StaticBox(200,20,200,400,5,5);
-    testBox2 = new StaticBox(10,200,300,400)
+    testBox2 = new StaticBox(10,180,300,420)
 
     //Start the game loop
     gameLoop=setInterval(step,1000/30);
