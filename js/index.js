@@ -10,7 +10,7 @@ var leftKey;
 //Game variables
 var gameLoop;
 var player;
-var levelCounter;
+var levelCounter=1;
 var playerCollisionCounter;
 
 //Runs once page has loaded
@@ -54,6 +54,11 @@ function step(){
     testBox2.draw();
     //Draw everything
     draw();
+    if(levelCounter==1){stepLvl1();}
+    else if(levelCounter==2){stepLvl2();}
+    else if(levelCounter==3){stepLvl3();}
+    else if(levelCounter==4){stepLvl4();}
+    else if(levelCounter==5){stepLvl5();}
 
     
 }
@@ -106,3 +111,9 @@ function setupInputs(){
         
     });
 }
+
+function stepLvl1(){}
+function stepLvl2(){}
+function stepLvl3(){}
+function stepLvl4(){}
+function stepLvl5(){}
