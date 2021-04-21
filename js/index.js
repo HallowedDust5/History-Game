@@ -23,8 +23,9 @@ window.onload=function(){
     setupInputs();
     //Create player
 
-    player= new Player(400,400);
+    player= new Player(200,200,50,50);
     testBox = new StaticBox(200,20,200,400,5,5);
+    testBox2 = new StaticBox(10,200,300,400)
 
     //Start the game loop
     gameLoop=setInterval(step,1000/30);
@@ -50,6 +51,7 @@ function step(){
     player.step();
 
     testBox.step();
+    testBox2.draw();
     //Draw everything
     draw();
 
@@ -67,7 +69,7 @@ function draw(){
     //Draw the player
     player.draw();
     testBox.draw();
-    
+    testBox2.draw();
 
     
 }

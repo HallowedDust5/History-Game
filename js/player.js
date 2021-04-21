@@ -40,17 +40,20 @@ class Player{
 
             //forEach box in level
             
-            let arr =[testBox];
+            let arr =[testBox,testBox2];
             for(let i=0; i<arr.length;i++){
                 let collideTest= new SAT.Response();
                 if(SAT.testPolygonPolygon(this.pVector.toPolygon(),arr[i].pVector.toPolygon(),collideTest)){
+                    this.vVector.reverse();
                     if(collideTest.overlapN.y!=0){
                         this.pVector.pos.y+=-1*collideTest.overlapV.y;
+                        this.vVector.x*=-1;
                     }
                     if(collideTest.overlapN.x!=0){
                         this.pVector.pos.x+=-1*collideTest.overlapV.x;
+                        this.vVector.y*=-1;
                     }
-                    this.vVector.reverse();
+                    
                     
                     
                     
