@@ -35,16 +35,7 @@ window.onload=function(){
     brush.fillStyle = "white";
     brush.fillRect(0,0,canvas.width,canvas.height);
 
-    // //Level 1
-	// 	levelCheck=true;
-	// 	while(levelCheck){
-	// 		//call level1draw function and initialize the objects in level 1
-	// 	}
-	// 	//Level 2
-	// 	levelCheck=true;
-	// 	while(levelCheck){
-	// 		//call level2draw function and initialize the objects in level 2
-    //     }
+
 }
 
 function step(){

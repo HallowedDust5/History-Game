@@ -40,15 +40,25 @@ class Player{
 
             //forEach box in level
             
+            //This'll be where the collision between the player and every box is handled
             let arr =[testBox,testBox2];
+            //Iterates through every box in the array
             for(let i=0; i<arr.length;i++){
+                //Creates an SAT.Response obj
+                    //It's simply there to store the details of a collision
                 let collideTest= new SAT.Response();
+                //This asks if the player and the box are colliding
                 if(SAT.testPolygonPolygon(this.pVector.toPolygon(),arr[i].pVector.toPolygon(),collideTest)){
+                    //Reverses the vector
                     this.vVector.reverse();
+                    //If there's any overlap on the y axis
                     if(collideTest.overlapN.y!=0){
+                        //Displaces the box so it's out of the other box
                         this.pVector.pos.y+=-1*collideTest.overlapV.y;
+                        //Reverses the x axis so it bounces the right way
                         this.vVector.x*=-1;
                     }
+                    //Same thing as the other if statement, but with x
                     if(collideTest.overlapN.x!=0){
                         this.pVector.pos.x+=-1*collideTest.overlapV.x;
                         this.vVector.y*=-1;
@@ -65,9 +75,9 @@ class Player{
         }
 
             //Correcting Speed
+                //If the speed is greater or less than the max speed, it's reassigned to the max speed
                 //X
-            this.pVector.pos.x+=this.vVector.x;
-            this.pVector.pos.y+=this.vVector.y;
+            this.pVector.pos.add(this.vVector);
             if(this.vVector.x>this.maxSpeed){
                 this.vVector.x=this.maxSpeed;
             }
@@ -89,6 +99,7 @@ class Player{
     }
     draw(){
         brush.fillStyle="green";
+        //If the player and testBox are colliding, it turns purple
         if(SAT.testPolygonPolygon(this.pVector.toPolygon(),testBox.pVector.toPolygon(),null)){
             brush.fillStyle="purple"
             
