@@ -10,7 +10,7 @@ var leftKey;
 //Game variables
 var gameLoop;
 var player;
-var levelCounter=1;
+var levelCounter=0;
 var playerCollisionCounter;
 
 //Runs once page has loaded

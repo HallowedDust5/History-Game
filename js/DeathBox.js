@@ -9,7 +9,7 @@ class DeathBox extends Box{
         let ppVector = new SAT.Vector().copy(player.pVector.pos);
         let bpVector = new SAT.Vector().copy(this.pVector.pos);
 
-        this.vVector.copy(bpVector.normalize().add(ppVector.normalize()));
+        this.vVector.copy(ppVector.sub(bpVector).normalize());
         this.pVector.pos.add(this.vVector);
     }
 
