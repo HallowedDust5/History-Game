@@ -14,7 +14,7 @@ class Box{
         this.trueHeight=this.tempHeight;
         
         //IMPORTANT
-            //When creating boxes, DO NOT have any overlap. It causes the player vector to reverse twice
+            //When creating boxes, DO NOT have any boxes overlap. It causes the player vector to reverse twice
             //This makes the player go INTO the box rather than get repelled
             //Corners are fine though.
     
