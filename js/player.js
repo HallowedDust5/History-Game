@@ -40,7 +40,7 @@ class Player{
 
             //forEach box in level
             
-            let arr =[testBox];
+            let arr =[testBox,testBox2];
             for(let i=0; i<arr.length;i++){
                 let collideTest= new SAT.Response();
                 if(SAT.testPolygonPolygon(this.pVector.toPolygon(),arr[i].pVector.toPolygon(),collideTest)){

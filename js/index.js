@@ -26,6 +26,7 @@ window.onload=function(){
     player= new Player(200,200,50,50);
     testBox = new StaticBox(200,20,200,400,5,5);
     testBox2 = new StaticBox(10,180,300,420)
+    testBox3 = new DeathBox(10,10,0,0);
 
     //Start the game loop
     gameLoop=setInterval(step,1000/30);
@@ -51,7 +52,8 @@ function step(){
     player.step();
 
     testBox.step();
-    testBox2.draw();
+    testBox2.step();
+    testBox3.step();
     //Draw everything
     draw();
     if(levelCounter==1){stepLvl1();}
@@ -75,6 +77,7 @@ function draw(){
     player.draw();
     testBox.draw();
     testBox2.draw();
+    testBox3.draw();
 
     
 }
