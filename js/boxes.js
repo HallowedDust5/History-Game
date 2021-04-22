@@ -1,6 +1,6 @@
 class Box{
 
-    constructor(tempWidth,tempHeight, tempx,tempy,tempxspeed,tempyspeed,tempwspeed,temphspeed){
+    constructor(tempWidth,tempHeight, tempx,tempy,tempxspeed,tempyspeed,tempwspeed=0,temphspeed=0){
         //position Vector
             //Really an SAT.Box obj, the position vector is the .pos attr of the variable
         this.pVector= new SAT.Box(new SAT.Vector(tempx,tempy),tempWidth,tempHeight)
@@ -13,13 +13,16 @@ class Box{
         this.trueWidth=this.tempWidth;
         this.trueHeight=this.tempHeight;
         
-    
+        //IMPORTANT
+            //When creating boxes, DO NOT have any overlap. It causes the player vector to reverse twice
+            //This makes the player go INTO the box rather than get repelled
+            //Corners are fine though.
     
     }
 
     step(){
         //Adds velocity to position
-        this.pVector.add(this.vVector);
+        this.pVector.pos.add(this.vVector);
         
  
     }

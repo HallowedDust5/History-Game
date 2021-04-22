@@ -59,7 +59,7 @@ class Player{
                         this.vVector.x*=-1;
                     }
                     //Same thing as the other if statement, but with x
-                    if(collideTest.overlapN.x!=0){
+                    else if(collideTest.overlapN.x!=0){
                         this.pVector.pos.x+=-1*collideTest.overlapV.x;
                         this.vVector.y*=-1;
                     }
